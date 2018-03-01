@@ -1,0 +1,30 @@
+<div class="men-wear-top">
+  <div id="top" class="callbacks_container">
+    <ul class="rslides" id="slider3">
+      <% 4.times do %>
+        <li>
+          <%= image_tag 'men1.jpg', class: 'img-responsive' %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+<script>
+    $(function () {
+        $("#slider3").responsiveSlides({
+            auto: true,
+            pager: true,
+            nav: false,
+            speed: 500,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+    });
+</script>

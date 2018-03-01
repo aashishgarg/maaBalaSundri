@@ -514,11 +514,11 @@ a.simpleCart_empty {
   opacity: 1.0;
 }
 a.callbacks_nav.callbacks1_nav.prev {
-	background: transparent url("../images/themes.png") no-repeat 0px 0px;
+	background: transparent image_url("themes.png") no-repeat 0px 0px;
   left: -3.1%;
 }
 .callbacks_nav.next {
-	background: transparent url("../images/themes.png") no-repeat -46px 0px;
+	background: transparent image_url("themes.png") no-repeat -46px 0px;
   left: 100%;
 }
 #slider3-pager a,#slider4-pager a  {
@@ -643,12 +643,12 @@ ul.social-slide li i.mac{
 	background: #FDA30E;	
 }
 a.callbacks_nav.callbacks2_nav.prev {
-background: transparent url("../images/2.png") no-repeat left top;
+background: transparent image_url("2.png") no-repeat left top;
 width:23px;
 height:23px;
 }
 a.callbacks_nav.callbacks2_nav.next{
-background: transparent url("../images/2.png") no-repeat -29px 0px;
+background: transparent image_url("2.png") no-repeat -29px 0px;
 width:23px;
 height:23px;
 }
@@ -2119,7 +2119,7 @@ border-bottom: 1px solid #e5e3db;
 }
 
 .css-treeview a{
-    background: url("../images/icons1.png") no-repeat 0px 9px !important;
+    background: image_url("icons1.png") no-repeat 0px 9px !important;
     padding: 7px 0 0 31px;
     border-radius: 3px;
     margin: 2px;
@@ -2186,7 +2186,7 @@ border-bottom: 1px solid #e5e3db;
 .css-treeview label,
 .css-treeview label::before
 {
-	background:url("../images/icons1.png") no-repeat 0px 7px !important;
+	background:image_url("icons1.png") no-repeat 0px 7px !important;
 }
 .css-treeview label,
 .css-treeview a,
@@ -2334,7 +2334,7 @@ label.checkbox {
 /*** checked state ***/
 .radio input + i:after {
   content: '';
-  background: url("../images/tick-mark1.png") no-repeat center;
+  background: image_url("tick-mark1.png") no-repeat center;
   top: 1px;
   left: 1px;
   width: 9px;
@@ -2722,7 +2722,7 @@ td.invert-image a img {
 	position:relative;
 }
 .close1,.close2,.close3,.close4 {
-    background: url('../images/close_1.png') no-repeat 0px 0px;
+    background: image_url('close_1.png') no-repeat 0px 0px;
     cursor: pointer;
     width: 28px;
     height: 28px;
