@@ -11,5 +11,5 @@ class ItemVariant < ApplicationRecord
   has_many :item_pricings, inverse_of: :item_variant, dependent: :destroy
 
   has_many :order_details, inverse_of: :item_variant, dependent: :destroy
-  has_many :orders, class_name: 'OrderHeader', through: :order_details
+  # has_many :orders, class_name: 'OrderHeader', through: :order_details
 end
