@@ -10,6 +10,6 @@ development:
 
 production:
   <<: *default
-  database: maa_bala_sundri_prod.
+  database: maa_bala_sundri_prod
   username: root
   password: Anil@321
