@@ -24,5 +24,5 @@ def repository_url
   _user_name = STDIN.gets.strip
   STDOUT.print "\nBitbucket's Git Password: "
   _password = STDIN.noecho(&:gets).strip
-  "https://#{_user_name}:#{_password}@git@bitbucket.org:ashishgarg/maabalasundri.git"
+  "https://#{_user_name}:#{_password}@bitbucket.org/ashishgarg/maabalasundri.git"
 end
