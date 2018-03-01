@@ -8,6 +8,8 @@ end
 gem 'activeadmin'
 gem 'active_admin_theme'
 gem 'devise'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'rails', '~> 5.1.4'
 gem 'mysql2'
 gem 'puma', '~> 3.7'
