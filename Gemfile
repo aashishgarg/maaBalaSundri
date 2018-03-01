@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'activeadmin'
+gem 'active_admin_theme'
 gem 'devise'
 gem 'rails', '~> 5.1.4'
 gem 'mysql2'
