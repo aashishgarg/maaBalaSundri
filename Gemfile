@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'google_drive', '~> 1.0.5'
 gem 'activeadmin'
 gem 'active_admin_theme'
 gem 'devise'

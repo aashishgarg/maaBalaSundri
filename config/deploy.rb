@@ -171,6 +171,6 @@ task :restart => :environment do
   comment "----------------------------- Start Passenger"
   command %[mkdir -p #{File.join(fetch(:current_path), 'tmp')}]
   command %[touch #{File.join(fetch(:current_path), 'tmp', 'restart.txt')}]
-  # invoke :'product_deployment_sheet:update'
+  invoke :'product_deployment_sheet:update'
 end
 
