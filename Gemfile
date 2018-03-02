@@ -8,6 +8,11 @@ end
 gem 'google_drive', '~> 1.0.5'
 gem 'activeadmin'
 gem 'active_admin_theme'
+gem 'select2-rails'
+gem 'activeadmin-select2', github: 'mfairburn/activeadmin-select2'
+gem 'active_admin_import' #, '3.0.0'
+gem 'best_in_place', github: 'bernat/best_in_place'
+gem "paperclip", "~> 5.2.1"
 gem 'devise'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'

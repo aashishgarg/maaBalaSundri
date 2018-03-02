@@ -10,4 +10,3 @@
 //= require pignose.layerslider
 //= require responsiveslides.min
 //= require simpleCart.min
-

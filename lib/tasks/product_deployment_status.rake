@@ -17,7 +17,7 @@ end
 class DeploymentSheet
   CLIENT_ID = '548022686053-4n40os8r1qh6e1okca1l9mrhgevcng4o.apps.googleusercontent.com'
   CLIENT_SECRET = '1NWQ0z5HMzqtIa6szeLMwwBj'
-  # REFRESH_TOKEN = '1/jQiPa_DeNHSa3NaQo-NOr-F6iw3iRD-X29xwxny_OiM'
+  REFRESH_TOKEN = '1/jQiPa_DeNHSa3NaQo-NOr-F6iw3iRD-X29xwxny_OiM'
   COLUMN_NAMES = ['Sr. No', 'Server ip address', 'Environment', 'Deployed on', 'Deployed by', 'Branch name', 'Commit id']
 
   def update_status(row, sheet_title, work_sheet_title, is_descending = false)
@@ -35,7 +35,7 @@ class DeploymentSheet
   def fetch_access_token_from_refresh_token(client)
     begin
       client.authorization.grant_type = 'refresh_token'
-      # client.authorization.refresh_token = DeploymentSheet::REFRESH_TOKEN
+      client.authorization.refresh_token = DeploymentSheet::REFRESH_TOKEN
       client.authorization.fetch_access_token!
       client.authorization.access_token
     rescue Exception => e

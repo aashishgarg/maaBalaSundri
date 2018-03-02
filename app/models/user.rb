@@ -1,5 +1,8 @@
 class User < ApplicationRecord
 
+  # ------------- Constants ---------- #
+  ADMIN_EMAILS = ['anil@matabalasundienterprises.com']
+
   # ------------- Devise ------------- #
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
