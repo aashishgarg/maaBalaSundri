@@ -88,4 +88,28 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.default_url_options = {:host => 'https://www.matabalasundrienterprises.com'}
+  config.middleware.delete Rack::Lock
+  config.action_mailer.delivery_method = :smtp
+
+  config.middleware.use ExceptionNotification::Rack,
+                        email: {
+                            email_prefix: "[MataBalaSundri] [#{Rails.env}] ",
+                            :sender_address => %{"Exception Notifier" <no-reply@matabalasundrienterprises.com>},
+                            :exception_recipients => %w{01ashishgarg@gmail.com},
+                            delivery_method: :smtp,
+                            smtp_settings: {
+                                address: 'smtp.gmail.com',
+                                port: 587,
+                                domain: 'https://www.matabalasundrienterprises.com',
+                                user_name: 'matabalasundrienterprises.pnp',
+                                password: 'Anil@321',
+                                authentication: :plain,
+                                enable_starttls_auto: true
+                            }
+                        }
 end

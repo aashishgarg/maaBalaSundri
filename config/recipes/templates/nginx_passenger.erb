@@ -4,8 +4,6 @@
     listen [::]:443 ssl default_server;
     server_name _;
 
-    client_max_body_size 20M;
-
     # SSL configuration
     ssl on;
     ssl_certificate <%= fetch(:cert_path) %>;

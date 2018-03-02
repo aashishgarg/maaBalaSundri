@@ -116,6 +116,9 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.7.0)
+    exception_notification (4.2.2)
+      actionmailer (>= 4.0, < 6)
+      activesupport (>= 4.0, < 6)
     execjs (2.7.0)
     extlib (0.9.16)
     faraday (0.12.2)
@@ -346,6 +349,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise
+  exception_notification
   google_drive (~> 1.0.5)
   jbuilder (~> 2.5)
   jquery-rails
