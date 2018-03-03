@@ -1,5 +1,10 @@
 ActiveAdmin.register ItemVariant do
   menu label: 'Item Variants', parent: 'ITEMS'
+  config.per_page = 10
+  actions :all, :except => [:destroy]
+  scope('Filtered', default: true) { |scope| params[:item_id] ? scope.where(item_id: params[:item_id]) : scope }
+  scope :all
+  filter :item_sku_cont, label: 'SKU'
   permit_params :item_id, :price, :color_id, :size_id, :brand_id, :material_id,
                 images_attributes: [:avatar, :id, :_destroy]
 
@@ -20,7 +25,6 @@ ActiveAdmin.register ItemVariant do
   end
 
   index do
-    # selectable_column
     id_column
     column :item do |item_variant|
       label item_variant.item.name
