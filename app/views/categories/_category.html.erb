@@ -1,7 +1,14 @@
-<li><input type="checkbox" id="item-0-0"/><label for="item-0-0"><%= category.name.upcase %></label>
+<li>
+  <input type="checkbox" id="item-<%= cat_index %>"/>
+  <label for="item-<%= cat_index %>"><%= category.name.upcase %></label>
   <ul>
-    <% category.sub_categories.each do |sub_category| %>
-      <%= render partial: 'categories/sub_category', locals: {sub_category: sub_category} %>
+    <% category.sub_categories.each_with_index do |sub_category, sub_index| %>
+      <%= render partial: 'categories/sub_category',
+                 locals: {
+                     sub_category: sub_category,
+                     cat_index: cat_index,
+                     sub_index: sub_index
+                 } %>
     <% end %>
   </ul>
 </li>

@@ -1,1 +1,3 @@
-<li><%= link_to sub_category.name.upcase, items_path(scat: sub_category.name) %></li>
+<li id="item-<%= cat_index %>-<%= sub_index %>">
+  <%= link_to sub_category.name.upcase, items_path(scat: sub_category.name) %>
+</li>
