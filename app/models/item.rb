@@ -10,4 +10,6 @@ class Item < ApplicationRecord
   has_many :brands, class_name: 'Property::Brand', through: :item_variants
   has_many :sizes, class_name: 'Property::Size', through: :item_variants
   has_many :materials, class_name: 'Property::Material', through: :item_variants
+
+  paginates_per 8
 end

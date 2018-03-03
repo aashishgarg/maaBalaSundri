@@ -17,7 +17,7 @@
       </div>
 
       <%= render partial: 'categories/category_carousel' %>
-      <%= render partial: 'categories/category_desc' %>
+      <%= render partial: 'categories/category_desc', locals: {category: @category} %>
 
       <% 3.times do %>
         <div class="col-md-4 product-men no-pad-men">
@@ -28,9 +28,9 @@
     </div>
     <div class="clearfix"></div>
     <div class="single-pro">
-      <% 8.times do %>
+      <% @sub_category.items.each do |item| %>
         <div class="col-md-3 product-men">
-          <%= render partial: 'items/item' %>
+          <%= render partial: 'items/item', locals: {item: item} %>
         </div>
       <% end %>
       <div class="clearfix"></div>
