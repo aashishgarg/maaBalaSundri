@@ -94,7 +94,11 @@ ActiveRecord::Schema.define(version: 20180303110131) do
     t.integer "material_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_item_variants_on_brand_id"
+    t.index ["color_id"], name: "index_item_variants_on_color_id"
     t.index ["item_id"], name: "index_item_variants_on_item_id"
+    t.index ["material_id"], name: "index_item_variants_on_material_id"
+    t.index ["size_id"], name: "index_item_variants_on_size_id"
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -1,3 +1,6 @@
+# Different users can have different price for same item.
+# frozen_string_literal: true
+
 class ItemPricing < ApplicationRecord
 
   # ------------- Associations ------------- #

@@ -11,5 +11,5 @@ class Item < ApplicationRecord
   has_many :sizes, class_name: 'Property::Size', through: :item_variants
   has_many :materials, class_name: 'Property::Material', through: :item_variants
 
-  paginates_per 8
+  paginates_per 1
 end

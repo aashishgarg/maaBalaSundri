@@ -12,5 +12,10 @@ class CreateItemVariants < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+
+    add_index :item_variants, :color_id
+    add_index :item_variants, :brand_id
+    add_index :item_variants, :size_id
+    add_index :item_variants, :material_id
   end
 end
