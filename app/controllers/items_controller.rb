@@ -12,7 +12,6 @@ class ItemsController < ApplicationController
 
   private
   def category
-    @sub_category = Category.where(name: params[:scat]).take
-    @category = Category.where(id: @sub_category.parent_id).take
+    @sub_category = Category.where(name: params[:cat]).take
   end
 end

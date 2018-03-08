@@ -1,2 +1,2 @@
-<%= render partial: 'items/item_banner', locals: {desc: @category.name} %>
-<%= render partial: 'items/item_full_section', locals: {items: @items, category: @category} %>
+<%= render partial: 'items/item_banner', locals: {desc: @sub_category.root_category.name} %>
+<%= render partial: 'items/item_full_section', locals: {items: @items, category: @sub_category.root_category} %>

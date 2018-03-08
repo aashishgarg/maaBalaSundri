@@ -95,6 +95,15 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {:host => 'https://www.matabalasundrienterprises.com'}
   config.middleware.delete Rack::Lock
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :authentication => :plain,
+      :address => 'smtp.gmail.com',
+      :port => 587,
+      :domain => 'https://www.matabalasundrienterprises.com',
+      :user_name => 'matabalasundrienterprises.pnp',
+      :password => "Anil@321",
+      :enable_starttls_auto => true
+  }
 
   config.middleware.use ExceptionNotification::Rack,
                         email: {
