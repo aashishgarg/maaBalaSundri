@@ -1,7 +1,7 @@
 ActiveAdmin.register Category do
 
   menu label: 'Categories Master', parent: 'Masters'
-  permit_params :name, :parent_id
+  permit_params :name, :parent_id, :avatar
   filter :name
   config.per_page = 10
 
@@ -16,6 +16,8 @@ ActiveAdmin.register Category do
       f.input :parent_id, :label => 'Root category', as: :select2,
               collection: Category.root_categories.collect { |category| [category.name, category.id] }
       f.input :name
+      f.input :avatar, :as => :file,
+              :hint => f.object.new_record? ? "" : f.template.image_tag(f.object.avatar.url(:medium))
     end
     f.actions
   end
