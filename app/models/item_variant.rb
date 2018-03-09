@@ -16,8 +16,18 @@ class ItemVariant < ApplicationRecord
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
 
+  # --- Delegations ---- #
   delegate :name, to: :item
   delegate :description, to: :item
   delegate :sku, to: :item
   delegate :status, to: :item
+
+  # --- Callbacks ------ #
+  before_create :build_default_image
+
+  private
+
+  def build_default_image
+    images.build(avatar: '')
+  end
 end
