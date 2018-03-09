@@ -28,6 +28,6 @@ class ItemVariant < ApplicationRecord
   private
 
   def build_default_image
-    images.build(avatar: '')
+    images.build(avatar: '') unless images.present?
   end
 end
