@@ -6,7 +6,6 @@ class Category < ApplicationRecord
 
   has_many :items, inverse_of: :category, dependent: :destroy
   has_many :item_variants, through: :items
-  has_many :images, through: :item_variants
 
   has_many :colors, class_name: 'Property::Color', through: :item_variants
   has_many :brands, class_name: 'Property::Brand', through: :item_variants
@@ -15,6 +14,11 @@ class Category < ApplicationRecord
 
   has_attached_file :avatar, styles: {medium: '304x238', thumb: '150x150>'}, default_url: '/images/:style/missing.png'
   validates_attachment_content_type :avatar, content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif', 'application/pdf']
+
+  has_many :slide_images, -> {where("type = 'Slide'")}, class_name: 'Image', as: :imageable,
+           dependent: :destroy
+  has_one :profile_image, -> {where("type = 'Profile'")}, class_name: 'Image', as: :imageable,
+          dependent: :destroy
 
   # --- Scopes ---- #
   scope :root_categories, -> {where(parent_id: nil)}

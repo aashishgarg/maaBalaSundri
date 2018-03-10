@@ -18,6 +18,7 @@ ActiveAdmin.register Property::Material, as: 'Material' do
     column :created_at do |property|
       time_ago_in_words(property.created_at) + ' ago'
     end
+    actions
   end
 
   controller do

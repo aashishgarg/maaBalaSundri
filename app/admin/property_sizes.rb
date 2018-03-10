@@ -18,6 +18,7 @@ ActiveAdmin.register Property::Size, as: 'Size' do
     column :created_at do |property|
       time_ago_in_words(property.created_at) + ' ago'
     end
+    actions
   end
 
   controller do

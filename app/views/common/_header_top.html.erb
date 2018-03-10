@@ -5,7 +5,8 @@
       <li><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Free shipping On all orders</li>
       <li>
         <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-        <a href="mailto:matabalasundrienterprises@gmail.com">matabalasundrienterprises@gmail.com</a>
+        <% @organization = Organization.last %>
+        <a href="mailto:<%= @organization.email %>"><%= @organization.email %></a>
       </li>
     </ul>
   </div>

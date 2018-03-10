@@ -1,6 +1,18 @@
 class Image < ApplicationRecord
+  # -------- Associations -------- #
+  belongs_to :imageable, polymorphic: true
+  has_attached_file :avatar,
+                    styles: lambda {|attachment| attachment.instance.image_sizes},
+                    default_url: '/images/:style/missing.png'
 
-  belongs_to :item_variant
-  has_attached_file :avatar, :styles => { :large => "960x640>", :medium => "255x291", :thumb => "150x150>", :stamp => "30x30>"  }, :default_url => "/images/:style/missing.png"
-  validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif", "application/pdf"]
+  # -------- Validations --------- #
+  validates_attachment_content_type :avatar,
+                                    :content_type => %w(image/jpg image/jpeg image/png image/gif)
+
+  def image_sizes
+    case imageable_type
+      when 'Itemvariant'
+        {index: '255x249', show: '403x472', stamp: '90x105'}
+    end
+  end
 end

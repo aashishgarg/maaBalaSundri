@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180303110131) do
+ActiveRecord::Schema.define(version: 20180310062032) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
@@ -65,14 +65,17 @@ ActiveRecord::Schema.define(version: 20180303110131) do
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "item_variant_id"
     t.string "avatar_file_name"
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string "type"
+    t.string "imageable_type"
+    t.bigint "imageable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_variant_id"], name: "index_images_on_item_variant_id"
+    t.index ["imageable_id", "imageable_type"], name: "index_images_on_imageable_id_and_imageable_type"
+    t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
   end
 
   create_table "item_pricings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -131,6 +134,21 @@ ActiveRecord::Schema.define(version: 20180303110131) do
     t.index ["user_id"], name: "index_order_headers_on_user_id"
   end
 
+  create_table "organizations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "email"
+    t.text "address"
+    t.string "mobile_number"
+    t.string "phone_number"
+    t.text "about_us"
+    t.text "tag_line"
+    t.decimal "latitude", precision: 10
+    t.decimal "longitude", precision: 10
+    t.text "social_links"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "property_brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -151,6 +169,12 @@ ActiveRecord::Schema.define(version: 20180303110131) do
 
   create_table "property_sizes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "static_pages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

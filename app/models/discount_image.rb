@@ -1,0 +1,3 @@
+class DiscountImage < Image
+
+end
