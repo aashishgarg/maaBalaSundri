@@ -5,7 +5,8 @@
     <%#= image_tag 'a2.png', class: 'pro-image-back' %>
     <div class="men-cart-pro">
       <div class="inner-men-cart-pro">
-        <a href="single.html" class="link-product-add-cart">Quick View</a>
+        <%= link_to 'Quick View', item_path(item), class: 'link-product-add-cart' %>
+        <!--<a href="single.html" class="link-product-add-cart">Quick View</a>-->
       </div>
     </div>
     <span class="product-new-top">New</span>
