@@ -12,7 +12,7 @@ class Image < ApplicationRecord
   def image_sizes
     case imageable_type
       when 'ItemVariant'
-        {index: '255x249', show: '403x472', stamp: '90x105'}
+        {index: '255x249#', show: '403x472#', stamp: '90x105#'}
     end
   end
 end
