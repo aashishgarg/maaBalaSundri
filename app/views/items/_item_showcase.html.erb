@@ -1,0 +1,19 @@
+<div class="col-md-6 single-right-left animated wow slideInUp animated" data-wow-delay=".5s"
+     style="visibility: visible; animation-delay: 0.5s; animation-name: slideInUp;">
+  <div class="grid images_3_of_2">
+    <div class="flexslider">
+      <ul class="slides">
+        <% item.item_variants.each do |item_variant| %>
+          <li data-thumb="<%= item_variant.images.first.avatar.url(:stamp) %>"
+              data-id="v_<%= item_variant.id %>" class="variant">
+            <div class="thumb-image">
+              <%= image_tag item_variant.images.first.avatar.url(:show), class: 'img-responsive',
+                            data: {imagezoom: 'true'} %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>

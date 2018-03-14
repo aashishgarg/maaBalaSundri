@@ -12,9 +12,6 @@ class Image < ApplicationRecord
   def image_sizes
     case imageable_type
       when 'ItemVariant'
-        puts '&&&&&&&&&&&&&&&&&&&&&&&&&&&'
-        puts '&&&&&&&&&&&&&&&&&&&&&&&&&&&'
-        puts '&&&&&&&&&&&&&&&&&&&&&&&&&&&'
         {index: '255x249', show: '403x472', stamp: '90x105'}
     end
   end

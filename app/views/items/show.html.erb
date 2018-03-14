@@ -1,2 +1,23 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<div class="single">
+  <div class="container">
+    <%= render partial: 'items/item_showcase', locals: {item: @item} %>
+    <%= render partial: 'items/item_details', locals: {item: @item} %>
+    <div class="clearfix"></div>
+    <%= render partial: 'items/tabs/tabs' %>
+  </div>
+</div>
+
+<script>
+    $(function () {
+        $('li.variant').on('click', function () {
+            $('span.item_price')
+        });
+    });
+    // Can also be used with $(document).ready()
+    $(window).load(function () {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            controlNav: "thumbnails"
+        });
+    });
+</script>
