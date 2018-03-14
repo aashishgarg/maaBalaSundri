@@ -1,5 +1,5 @@
 <li>
-  <input type="checkbox" id="item-<%= cat_index %>"/>
+  <input type="checkbox" id="item-<%= cat_index %> " checked="checked"/>
   <label for="item-<%= cat_index %>"><%= category.name.upcase %></label>
   <ul>
     <% category.sub_categories.each_with_index do |sub_category, sub_index| %>

@@ -1,14 +1,14 @@
 <div class="men-wear">
   <div class="container">
 
-    <div class="col-md-3 products-left">
-      <%#= render partial: 'categories/price_filter_slider' %>
+    <div class="col-md-4 products-left">
+      <%= render partial: 'categories/price_filter_slider' %>
       <%= render partial: 'categories/categories' %>
-      <%#= render partial: 'categories/live_polling' %>
+      <%= render partial: 'categories/live_polling' %>
       <div class="clearfix"></div>
     </div>
 
-    <div class="col-md-9 products-right">
+    <div class="col-md-8 products-right">
       <h5>Product Compare(0)</h5>
       <div class="sort-grid">
         <%= render partial: 'items/sort_items' %>
@@ -16,31 +16,26 @@
         <div class="clearfix"></div>
       </div>
 
-      <%#= render partial: 'categories/category_carousel' %>
-      <%#= render partial: 'categories/category_desc', locals: {category: category} %>
+      <%= render partial: 'categories/category_carousel' %>
+      <%= render partial: 'categories/category_desc', locals: {category: category} %>
 
-
-          <% items.each do |item| %>
-          <div class="col-md-4 product-men no-pad-men">
-            <!--<div class="col-md-3 product-men">-->
-              <%= render partial: 'items/item', locals: {item: item} %>
-            <!--</div>-->
-          </div>
-          <% end %>
-          <%#= render partial: 'items/item' %>
-
+      <% items.first(Category::SHOWCASE_ITEMS_COUNT).each do |item| %>
+        <div class="col-md-4 product-men no-pad-men">
+          <%= render partial: 'items/item', locals: {item: item} %>
+        </div>
+      <% end %>
       <div class="clearfix"></div>
     </div>
+
     <div class="clearfix"></div>
     <div class="single-pro">
-      <%# items.each do |item| %>
-        <!--<div class="col-md-3 product-men">-->
-          <%#= render partial: 'items/item', locals: {item: item} %>
-        <!--</div>-->
-      <%# end %>
+      <% items.offset(Category::SHOWCASE_ITEMS_COUNT).each do |item| %>
+        <div class="col-md-3 product-men">
+          <%= render partial: 'items/item', locals: {item: item} %>
+        </div>
+      <% end %>
       <div class="clearfix"></div>
     </div>
-    <%= render partial: 'common/pagination', locals: {items: items} %>
-    <%#= paginate items %>
+    <%= render partial: 'common/pagination' %>
   </div>
 </div>

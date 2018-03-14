@@ -15,8 +15,6 @@ gem 'devise'
 gem 'exception_notification'
 gem 'google_drive', '~> 1.0.5'
 gem 'jbuilder', '~> 2.5'
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
 gem 'kaminari' # For Pagination
 gem 'mysql2'
 gem 'paperclip', '~> 5.2.1' # For image functionality of different models

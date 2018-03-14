@@ -1,5 +1,8 @@
 class Category < ApplicationRecord
 
+  # --- Constants ------ #
+  SHOWCASE_ITEMS_COUNT = 3
+
   # --- Associations --- #
   has_many :sub_categories, class_name: 'Category', foreign_key: 'parent_id', dependent: :destroy
   belongs_to :root_category, class_name: 'Category', foreign_key: 'parent_id', optional: true
