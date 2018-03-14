@@ -11,9 +11,15 @@
       <!-- Slide Description Image Area (316 x 328) -->
       <div class="script-wrap">
         <ul class="script-group">
-          <li><div class="inner-script"><%= image_tag 'baa1.jpg', class: 'img-responsive' %></div></li>
-          <li><div class="inner-script"><%= image_tag 'baa2.jpg', class: 'img-responsive' %></div></li>
-          <li><div class="inner-script"><%= image_tag 'baa3.jpg', class: 'img-responsive' %></div></li>
+          <li>
+            <div class="inner-script"><%= image_tag 'baa1.jpg', class: 'img-responsive' %></div>
+          </li>
+          <li>
+            <div class="inner-script"><%= image_tag 'baa2.jpg', class: 'img-responsive' %></div>
+          </li>
+          <li>
+            <div class="inner-script"><%= image_tag 'baa3.jpg', class: 'img-responsive' %></div>
+          </li>
         </ul>
         <div class="slide-controller">
           <a href="#" class="btn-prev"><%= image_tag 'btn_prev.png' %></a>
@@ -27,13 +33,13 @@
     <div class="clearfix"></div>
   </div>
   <script type="text/javascript">
-    $(document).on('turbolinks:load', function() {
-        $('#visual').pignoseLayerSlider({
-            play    : '.btn-play',
-            pause   : '.btn-pause',
-            next    : '.btn-next',
-            prev    : '.btn-prev'
-        });
-    });
+      $(function () {
+          $('#visual').pignoseLayerSlider({
+              play: '.btn-play',
+              pause: '.btn-pause',
+              next: '.btn-next',
+              prev: '.btn-prev'
+          });
+      })
   </script>
 </div>
