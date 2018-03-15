@@ -3,14 +3,21 @@
     <div class="slide-visual">
       <!-- Slide Image Area (1000 x 424) -->
       <ul class="slide-group">
-        <li><%= image_tag 'ba1.jpg', class: 'img-responsive' %></li>
-        <li><%= image_tag 'ba2.jpg', class: 'img-responsive' %></li>
-        <li><%= image_tag 'ba3.jpg', class: 'img-responsive' %></li>
+        <% StaticPageHome.last.slide_images.each do |image| %>
+          <li><%= image_tag image.avatar.url(:show), class: 'img-responsive' %></li>
+        <% end %>
       </ul>
 
       <!-- Slide Description Image Area (316 x 328) -->
       <div class="script-wrap">
         <ul class="script-group">
+
+          <% StaticPageHome.last.slide_images.each do |image| %>
+            <!--<li><div class="inner-script">-->
+              <%#= image_tag image.avatar.url(:stamp), class: 'img-responsive' %>
+            <!--</div></li>-->
+          <% end %>
+
           <li>
             <div class="inner-script"><%= image_tag 'baa1.jpg', class: 'img-responsive' %></div>
           </li>

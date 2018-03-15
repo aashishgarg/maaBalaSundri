@@ -10,7 +10,7 @@ class Image < ApplicationRecord
                                     :content_type => %w(image/jpg image/jpeg image/png image/gif)
 
   def image_sizes
-    case imageable_type
+    case imageable.class.name
       when 'ItemVariant'
         {index: '255x249#', show: '403x472#', stamp: '90x105#'}
     end
